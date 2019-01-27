@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="stylesheet" href="../css/estilo.css">
+    </head>
+    <body>
+        <div class="contenedor">
+            <!--{% include "Proyecto/html/nav.html" %}-->
+            
+            {% block body %}
+                <!--Aqui no va nada,el body va en el archivo url('Proyecto/index.html-twig')-->
+            {% endblock %}
+            
+            <!--{% include "Proyecto/html/footer.html" %}-->
+
+        </div>
+    </body>
+</html>

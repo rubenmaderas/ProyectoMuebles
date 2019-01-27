@@ -1,0 +1,16 @@
+{% extends 'Proyecto/base.html.twig' %}
+
+{% block comentarios %}
+    {# Aqui van los comentarios del documento generales #}
+
+    {#  
+        En el documento index no puedes poner nada fuera de los bloques
+        si no te dará error
+
+        En index va todo el contenido dinamico de la pagina en BLOQUES
+     #}
+{% endblock %}
+
+{% block body %}
+    {% include "Proyecto/html/slider.html" %}
+{% endblock %}

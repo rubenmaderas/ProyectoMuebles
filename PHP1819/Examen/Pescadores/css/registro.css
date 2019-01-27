@@ -1,0 +1,191 @@
+#contenedor{
+    width: 60em; 
+    margin: 3em auto;
+}
+
+header{
+    width: 60em;
+    height: 10em;
+    color: rgb(0, 97, 139);
+}
+
+#textocabecera{
+    height: 10em;
+    width: 20em;
+    float: left;
+    margin-left: 14em;
+}
+#textocabecera h1{
+    text-align: center;
+    font-size: 40px;
+}
+#imagencabecera{
+    width: 5em;
+    height: 10em;
+    float: left; 
+}
+#imagencabecera img{
+    width: 9em;
+    height: 10em;
+    float: left;
+}
+
+#imagencabecera2{
+    width: 5em;
+    height: 10em;
+    float: left;
+    margin-left: 10em;
+}
+#imagencabecera2 img{
+    width: 9em;
+    height: 10em;
+    float: left;
+}
+/*NAV*/
+nav{
+    float: left;
+    width: 60em;
+    height: 3em;
+    background-color: rgb(0, 97, 139);   
+}
+nav ul{
+    float: left;
+    width: 700px;
+    list-style: none;
+    padding: 1em;
+    margin-top: -0.1em;
+    margin-left: 7em;
+    
+}
+nav ul li{
+    display: inline;
+}
+nav ul li a{
+    font-family: Arial, Helvetica, sans-serif;
+    padding:1em;
+    margin-left: 19em;
+    text-decoration: none;
+    color: white;
+}
+nav ul li span{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: -5em;
+    color: white;
+}
+nav ul li a:hover{
+    background-color: #009eff;
+}
+nav p a{
+    margin-left: 5em;
+    float: left;
+    color: white;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+nav img{
+    margin-top: -2em;
+    margin-left: 1em;
+    float: left;
+    width: 5em;
+    height: 3em;
+}
+/*FOOTER*/
+footer{
+    width: 60em;
+    height: 3em;
+    float:left;
+    background-color:#7DA8BF;
+}
+footer a img{
+    width: 3em;
+    height: 3em;
+    float: left;
+}
+/*ID*/
+#redes{
+    margin-left: 1em;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    width: 7em;
+    float: left;
+}
+#anio{
+    float: left;
+    width: 15em;
+    margin-left: 9em;
+}
+
+#autor{
+    float: left;
+    width: 16em;
+    margin-left: 5em;
+}
+/*SECTION*/
+section{
+    width: 60em;
+    height: 30em;
+    float: left;
+}
+
+.contenedorsection{
+    margin-top:1em;
+    height: 29em;
+}
+
+fieldset{
+    height: 27.5em;
+}
+.registro{
+    width: 58.5em;
+    height: 4em;
+    float: left;
+}
+
+.registro label{
+    margin-left:21em;
+}
+.registro input{
+    float: left;
+    width: 20em;
+    margin: 8px 24.5em;
+    padding: 12px 20px;
+    /*display: inline-block;*/
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.mensajeerror{
+    width: 5em;
+    height: 1em;
+    margin-left: 690px;
+    border-style: solid;
+}
+
+.btnenviar {
+    float: left;
+    width: 200px;
+    margin-top: 2em;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 30px;
+    margin-left: 20em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btnlimpiar {
+    float: left;
+    width: 200px;
+    margin-top: 2em;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin-left: 2em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+
+

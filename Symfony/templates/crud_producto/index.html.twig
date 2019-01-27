@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<title>Listado de productos!</title>
+
+{% block body %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Path</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for cat in categoria %}
+                <tr>
+                    <td>{{cat.nombre}}</td>
+                    <td>{{cat.getPathimagen()}}</td>    
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <br>
+
+    <a href="{{ url('nuevoalumno') }}">Nuevo alumno</a>
+{% endblock %}

@@ -1,0 +1,31 @@
+
+{% extends 'vista.html.twig' %}
+
+{% block body %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">DNi</th>
+                <th scope="col">Apellidos</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for alumno in alumnos %}
+                <tr>
+                <td>{{alumno.DNi}}</td>
+                <td>{{alumno.Apellidos}}</td>
+                <td>
+                    <a href=""><i class="fas fa-tools"> Borrar</i></a>
+                    <a href=""><i class="fas fa-edit"> Editar</i></a>
+                </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <br>
+
+    <a href="{{ url('nuevoalumno') }}">Nuevo alumno</a>
+{% endblock %}
+

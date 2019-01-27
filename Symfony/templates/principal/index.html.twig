@@ -1,0 +1,21 @@
+
+
+{% block title %}
+    Hello 
+    {% for alumno in alumnos %}
+                {{alumno}}
+    {% endfor %}!
+{% endblock %}
+
+{% block body %}
+    <h1>Listado de alumnos de pepe</h1>
+
+    {% for alumno in alumnos %}
+        {{alumno}}<br>
+    {% endfor %}
+
+    <h1>Listado objetos alumnos</h1>
+    {% for persona in objetosalumnos %}
+        {{persona.Dni}}...{{persona.Apellidos}} <br>
+    {% endfor %}
+{% endblock %}

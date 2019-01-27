@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/inicio.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="topnav">
+        <a class="active" href="#inicio">Inicio</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contact">Contacto</a>
+        <div class="login-container">
+            <form action="/action_page.php">
+                <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Iniciar Sesion</button>
+                <a href="registro.php" style.display='block' style="width:auto;">Registrate</a>
+            </form>
+        </div>
+    </div> 
+    <!--------------------------------------Inicio sesion Formulario--------------------------------------------------->
+    <div id="id01" class="modal">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <form class="modal-content">
+            <div class="container">
+                <h1>Inicio Sesion</h1>
+                <p>Porfavor rellene el formulario para iniciar sesion.</p>
+                <hr>
+                <label for="dni"><b>DNI</b></label>
+                <input type="text" placeholder="Introducir DNI" name="dni" required>
+            
+                <label for="psw"><b>Contraseña</b></label>
+                <input type="password" placeholder="Introducir Contraseña" name="contraseña" required>
+                
+                <label>
+                    <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Recordar
+                </label>
+            
+                <div class="clearfix">
+                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancelar</button>
+                    <button type="submit" class="signupbtn">Iniciar Sesion</button>
+                </div>
+            </div>
+        </form>
+    </div>
+          
+    <script>
+        // Get the modal
+        var modal = document.getElementById('id01');
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            console.log(event);
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+    <!--------------------------------------Imagenes Agricultor------------------------------------------------->
+    <div class="w3-content w3-section" style="max-width:500px"> 
+        <img class="mySlides" src="imagenes/SlidesShow/primera.jpg" >
+        <img class="mySlides" src="imagenes/SlidesShow/segunda.jpg">
+        <img class="mySlides" src="imagenes/SlidesShow/tercera.jpg">
+    </div>
+      
+    <script>
+        var myIndex = 0;
+        carousel();
+        
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+            }
+            myIndex++;
+            if (myIndex > x.length) {myIndex = 1}    
+            x[myIndex-1].style.display = "block";  
+            setTimeout(carousel, 10000); // Change image every 2 seconds
+        }
+    </script>
+
+    <!--------------------------------------Informacion Home--------------------------------------------------------->
+    <!--Ancla--><a name="inicio"></a>
+    <div class="index-inicio">
+        <h2 class="index-inicio-h2">Proyecto Agricola</h2>
+        <p> Nuestra semilla se siembra en el año 2008 en Montilla, Córdoba, con la creación de Agroibérica Ingenieros, 
+            una consultora e ingeniería que se constituyo con el objetivo fundamental de llegar a todas las personas y 
+            empresas para poner en marcha actuaciones que requieran la disposición de medios, ofrecidos desde la 
+            profesionalidad, la proximidad y el conocimiento del sector, proporcionando un servicio técnico a los sectores 
+            agrícola, ganadero, medioambiental y agroindustrial. Esta relación de complicidad con el agricultor y ganadero 
+            hace surgir la necesidad de desarrollar un modelo de formación agraria adaptado a las necesidades y tecnologías 
+            actuales, dando así lugar a el nacimiento de Iberf en el 2010.
+
+            La variedad de las especialidades que se desarrollan, así como la actualización de los planes de estudios, han 
+            hecho que Iberf se haya consolidado durante estos 8 años como una escuela de referencia donde los alumnos se 
+            pueden formar tanto con un fin laboral, como por interés meramente personal. La flexibilidad horaria de nuestros 
+            cursos, y el uso de las últimas tecnologías educativas, permiten un fácil acceso a la formación para estudiantes, 
+            trabajadores, desempleados, etc
+        </p>
+    </div>
+
+    <!-----------------------------------------Informacion Nosotros--------------------------------------------------->
+    <div class="index-inicio">
+        <!--Ancla--><a name="nosotros"></a>
+        <h2 class="index-inicio-h2">Nosotros</h2>
+        <p> El principal objetivo de nuestra empresa es el de conseguir precios muy competitivos para el agricultor, mediante el uso de:
+
+                Contacto directo con los fabricantes de los productos y grandes almacenistas.
+                Mantenimiento de gran volumen de compras, que permite acceder a reducidos costes del producto a comercializar.
+                Nuestra Filosofía se basa en tres pilares:
+                
+                1º El respeto al Medio Ambiente.
+                2º La comercialización exclusiva de productos vigentes según el catálogo del MAGRAMA.
+                3º REPERCUTIR AL CONSUMIDOR EL AHORRO, provocado por el uso de las tecnologías y el hecho de la no existencia de una intermediación.
+                La forma de acceder a sus productos es simple … Selecciónelos, realice su pedido (compra directa, sin más intermediación) y nos encargamos de hacérselos llegar en 72 horas.
+                
+                Entre nuestros proveedores se encuentran las marcas con más presencia en el mercado, en los apartados de fabricación, envasado y distribución, asegurándonos:
+                
+                La máxima calidad de los productos que comercializamos.
+                Un alto índice de rotación de los mismos.
+                Embalajes y envases con las medidas de gran calidad, que cumplen las medidas de seguridad necesarias para su almacenaje y posterior uso.
+                
+                Aseguramos la mejor relación CALIDAD-PRECIO, atendiendo solicitudes de Materias Activas y proponiendo al consumidor la mejor opción, dentro de la relación de marcas con capacidad de fabricar o envasar los productos relacionados con las mismas, a las que tenemos acceso en ese momento.
+                
+                Marca Registrada de Clearis Ucontrol S.L., con CIF. B18864280 e inscrita en el Registro Mercantil de la Provincia de Granada, al tomo 1318, folio 26, hoja número GR-34995 y domicilio social en C/Luís Magaña, 4. Teléfono: 958 102 256,  18800 Baza (Granada).
+                
+                Para cualquier ampliación de información o notificación de incidencia, estamos a su disposición en info@latiendadelagricultor.com
+        </p>
+    </div>
+
+    <footer>
+        <a href="https://es-es.facebook.com/" target="_blank"><img src="imagenes/Footer/facebook.png" width="25px" height="25px "/></a>
+        <a href="https://twitter.com/?lang=es" target="_blank"><img src="imagenes/Footer/twitter.PNG" width="25px" height="25px "/></a>
+        <a href="https://www.instagram.com/?hl=es" target="_blank"><img src="imagenes/Footer/instagram.PNG" width="25px" height="25px "/></a>
+        <p>Redes Sociales</p>
+        
+    </footer>
+
+</body>
+</html>
