@@ -159,3 +159,7 @@ footer a:hover {
   border-radius: 4px;
   box-sizing: border-box;
 }
+
+.contenedor_formulario{
+  height: 70vh;
+}

@@ -54,34 +54,6 @@ class CategoriasController extends AbstractController
     }
 
     /**
-     * @Route("/materiales/nueva", name="nuevo") 
-     */
-    /*public function nuevo_materiales(Request $request){
-        $materiales = new Materiales();
-
-        $formulario=$this->createFormBuilder($materiales)
-            ->add('nombre')
-            ->add('productos')
-            ->add("grabar",SubmitType::class)
-            ->getForm();
-
-        $formulario->handleRequest($request);
-            
-        if($formulario->isSubmitted()){
-            $materiales = $formulario->getData();
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($materiales);
-            $entityManager->flush();
-
-            return $this->redirectToRoute("categorias");  
-        }
-
-        return $this->render("materiales/nueva.html.twig",
-        ["formulario" => $formulario->createView()]);
-
-    }*/
-
-    /**
      * @Route("/categorias/borra", name="borra") 
      */
     public function borrar()

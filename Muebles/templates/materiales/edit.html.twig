@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editar Materiales{% endblock %}
+
+{% block body %}
+    <h1>Editar Materiales</h1>
+
+    {{ include('materiales/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('materiales_index') }}">Volver</a>
+
+    {{ include('materiales/_delete_form.html.twig') }}
+{% endblock %}

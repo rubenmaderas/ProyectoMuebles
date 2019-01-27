@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Materiales index{% endblock %}
+
+{% block body %}
+    <h1>Materiales index</h1>
+    <div class="contenedor_formulario">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for materiale in materiales %}
+                <tr>
+                    <td>{{ materiale.id }}</td>
+                    <td>{{ materiale.nombre }}</td>
+                    <td>
+                        <a href="{{ path('materiales_show', {'id': materiale.id}) }}">Ver |</a>
+                        <a href="{{ path('materiales_edit', {'id': materiale.id}) }}"> Editar</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="3">No se encuentran materiales creados</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <a href="{{ path('materiales_new') }}">Nuevo Material</a>
+{% endblock %}
