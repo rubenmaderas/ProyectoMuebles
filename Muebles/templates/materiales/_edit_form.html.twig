@@ -3,6 +3,5 @@
     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ materiale.id) }}">
 
     <a href="{{ path('materiales_index') }}" class="btn btn-dark"><i class="fas fa-exchange-alt"></i> Volver</a>
-    <a href="{{ path('materiales_edit', {'id': materiale.id}) }}" class="btn btn-primary"><i class="fas fa-exchange-alt"></i>Editar</a>
     <button class="btn btn-danger"><i class="fas fa-trash-alt"></i> Borrar</button>
 </form>

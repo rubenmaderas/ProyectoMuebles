@@ -3,7 +3,7 @@
 {% block body %}
 
     {{ form_start(formulario) }}
-    {{ form_widget(formulario) }}
+    {{ form_widget(formulario,{'attr': {'class': 'baseformulario'}}) }}
     {{ form_end(formulario) }}
     
 {% endblock %}

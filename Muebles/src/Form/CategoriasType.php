@@ -16,8 +16,8 @@ class CategoriasType extends AbstractType
         $builder
             ->add('nombre')
             ->add('pathimagen')
-            ->add('Guardar',SubmitButton::class)
-        ;
+            ->add('Guardar',SubmitButton::class,[
+                'attr' => ['class' => 'guardar']]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

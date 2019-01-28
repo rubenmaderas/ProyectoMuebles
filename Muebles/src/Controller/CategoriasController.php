@@ -33,7 +33,8 @@ class CategoriasController extends AbstractController
         $formulario=$this->createFormBuilder($categoria)
         ->add('nombre')
         ->add('pathimagen')
-        ->add("grabar",SubmitType::class)
+        ->add('Guardar',SubmitType::class,[
+            'attr' => ['class' => 'guardar']])
         ->getForm();
 
         $formulario->handleRequest($request);
@@ -56,8 +57,9 @@ class CategoriasController extends AbstractController
     /**
      * @Route("/categorias/borra", name="borra") 
      */
-    public function borrar()
+    public function borrar(Categorias $categoria)
     {
-        # code...
+        $this->getDoctrine()->getManager()->remove($categoria);
+        
     }
 }
