@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Ofertas{% endblock %}
+
+{% block body %}
+    <div class="contenedor_formulario">
+        <div class="tabla m-4">
+            <h1 class="text-center d-block p-2">Editar Ofertas</h1>
+            {{ include('ofertas/_form.html.twig') }}
+        </div>
+        <div class="opciones m-4">
+            {{ include('ofertas/_delete_form.html.twig') }}
+        </div>
+    </div>
+
+    
+{% endblock %}
