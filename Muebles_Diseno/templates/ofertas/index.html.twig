@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ofertas index{% endblock %}
+
+{% block body %}
+    <div class="contenedor_formulario">
+        <div class="tabla m-4">
+            <h1 class="text-center d-block p-2">Ofertas</h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Descuento</th>
+                    <th>Inicio oferta</th>
+                    <th>Fin oferta</th>
+                    <th>Producto</th>
+                    <th>Accion</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for oferta in ofertas %}
+                <tr>
+                    <td>{{ oferta.id }}</td>
+                    <td>{{ oferta.descuento }}</td>
+                    <td>{{ oferta.finiciooferta ? oferta.finiciooferta|date('Y-m-d H:i:s') : '' }}</td>
+                    <td>{{ oferta.ffinoferta ? oferta.ffinoferta|date('Y-m-d H:i:s') : '' }}</td>
+                    <td>{{ oferta.productos }}</td>
+                    <td>
+                        <a href="{{ path('ofertas_show', {'id': oferta.id}) }}">Ver |</a>
+                        <a href="{{ path('ofertas_edit', {'id': oferta.id}) }}"> Editar</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">No se encuentran ofertas creadas</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <div class="opciones m-4 w-100">
+                <div class="navigation d-flex justify-content-center">
+                    {{ knp_pagination_render(ofertas) }}
+                </div>
+                <a href="{{ path('ofertas_new') }}" ><i class="fas fa-plus-circle"></i> Nueva Oferta</a>
+            </div>
+            </div>
+        </div>
+        <!--<div class="count">
+            {{ ofertas.getTotalItemCount }}
+        </div>-->
+    </div>
+    
+{% endblock %}

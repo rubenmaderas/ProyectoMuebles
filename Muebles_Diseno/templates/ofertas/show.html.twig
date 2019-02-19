@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ofertas{% endblock %}
+
+{% block body %}
+    <div class="contenedor_formulario">
+        <div class="tabla m-4">
+            <h1 class="text-center d-block p-2">Ofertas</h1>
+
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th>Id</th>
+                        <td>{{ oferta.id }}</td>
+                    </tr>
+                    <tr>
+                        <th>Descuento</th>
+                        <td>{{ oferta.descuento }}</td>
+                    </tr>
+                    <tr>
+                        <th>Inicio oferta</th>
+                        <td>{{ oferta.finiciooferta ? oferta.finiciooferta|date('Y-m-d H:i:s') : '' }}</td>
+                    </tr>
+                    <tr>
+                        <th>Fin oferta</th>
+                        <td>{{ oferta.ffinoferta ? oferta.ffinoferta|date('Y-m-d H:i:s') : '' }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            </div>
+        <div class="opciones m-4">
+            {{ include('ofertas/_delete_form.html.twig') }}
+        </div>
+    </div>
+
+    {# <a href="{{ path('ofertas_index') }}">back to list</a> #}
+
+    {# <a href="{{ path('ofertas_edit', {'id': oferta.id}) }}">edit</a> #}
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Productos{% endblock %}
+
+{% block body %}
+    <div class="contenedor_formulario">
+        <div class="tabla m-4">
+            <h1 class="text-center d-block p-2">Productos</h1>
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th>Id</th>
+                        <td>{{ producto.id }}</td>
+                    </tr>
+                    <tr>
+                        <th>Nombre</th>
+                        <td>{{ producto.nombre }}</td>
+                    </tr>
+                    <tr>
+                        <th>Precio</th>
+                        <td>{{ producto.precio }}</td>
+                    </tr>
+                    <tr>
+                        <th>Dimensiones</th>
+                        <td>{{ producto.dimensiones }}</td>
+                    </tr>
+                    <tr>
+                        <th>Pathimagen</th>
+                        <td>{{ producto.pathimagen }}</td>
+                    </tr>
+                    <tr>
+                        <th>Stock</th>
+                        <td>{{ producto.stock }}</td>
+                    </tr>
+                    <tr>
+                        <th>Descripcion</th>
+                        <td>{{ producto.descripcion }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="opciones m-4">
+            {{ include('productos/_delete_form.html.twig') }}
+        </div>
+    </div>
+{% endblock %}

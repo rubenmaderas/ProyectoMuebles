@@ -1,0 +1,8 @@
+<form method="post" class="mensajeeliminar" action="{{ path('categorias_delete', {'id': categoria.id}) }}" onsubmit="return confirm('¿Estás seguro que quieres eliminar este elemento?');">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ categoria.id) }}">
+    
+    <a href="{{ path('categorias_index') }}" class="btn btn-outline-warning my-2 my-sm-0"><i class="fas fa-exchange-alt"></i> Volver</a>
+    <a href="{{ path('categorias_edit', {'id': categoria.id}) }}" class="btn btn-outline-info my-2 my-sm-0 ml-sm-3"><i class="fas fa-exchange-alt"></i>Editar</a>
+    <button class="btn btn-outline-danger my-2 my-sm-0 ml-sm-3"><i class="fas fa-trash-alt"></i> Borrar</button>
+</form>

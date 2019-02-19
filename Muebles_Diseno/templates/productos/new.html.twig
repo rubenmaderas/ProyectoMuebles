@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+{% block title %}New Productos{% endblock %}
+{% block body %}
+    <div class="contenedor_formulario">
+        <div class="tabla m-4">
+            <h1 class="text-center d-block p-2">Nuevos Productos</h1>
+            {{ include('productos/_form.html.twig') }}
+        </div>
+        <div class="opciones m-4">
+            <a href="{{ path('productos_index') }}" class="btn btn-outline-warning my-2 my-sm-0"><i class="fas fa-exchange-alt"></i> Volver</a>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,66 @@
+<ul class="navbar-nav mr-auto">
+    <li class="nav-item">
+        <a class="nav-link" href="{{ url('index')}}">Inicio</a>
+    </li>
+
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">Categorias</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+         {% for categoria in categorias %}
+            <a class="dropdown-item" href="{{ url('listar',{'id':categoria.getId()}) }}">{{ categoria.getNombre }}</a>
+        {% endfor %}
+        </div>
+
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="#">Nosotros</a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="#">Contacto</a>
+    </li>
+
+</ul>
+
+<form method="GET" action="{{ url('buscar') }}" class="form-inline my-2 my-lg-0">
+    <input name="buscador" class="form-control mr-sm-2 buscador_nav" type="search" data-toggle="collapse" placeholder="Buscar..." aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0 btn_nav" id="buscar" type="submit">Buscar</button>
+    <li class="nav-item">
+        <a href="{{ url('ver_carrito') }}"><img src="{{ asset('image/carrito.png')}}" id="ver_carrito" class="carrito"></img></a>
+        {% if app.session.get('carrito')|length > 0 %}
+            {% set cuantos = app.session.get('carrito')|length %}
+        {% else %}
+            {% set cuantos = 0 %}
+        {% endif %}
+        <span id="numero">{{cuantos}}</span>
+    </li>
+</form> 
+    <div class="nav-item">
+    
+        {% if is_granted('ROLE_ADMIN') %}
+            <nav class="nav-item dropdown list-style-none align-bottom">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" 
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{ asset('image/admin.png')}}" width="50px" height="40px"></a>
+                <div class="dropdown-menu estees" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{ url('categorias_index')}}">Categorias</a>
+                    <a class="dropdown-item" href="{{ url('productos_index')}}">Productos</a>
+                    <a class="dropdown-item" href="{{ url('materiales_index')}}">Materiales</a>
+                    <a class="dropdown-item" href="{{ url('ofertas_index')}}">Ofertas</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="{{ path('app_logout') }}">Salir</a>
+                </div>
+            </nav>
+        {% else %}
+            <nav class="nav-item dropdown list-style-none align-bottom">
+                <a class="nav-link" href="{{ url('app_login')}}">
+                    <img src="{{ asset('image/iniciar_Sesion.png')}}" width="40px" height="40px">
+                    
+                </a>
+            </nav>
+        {% endif %}
+        
+    </div>
+
+

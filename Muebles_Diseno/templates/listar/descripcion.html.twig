@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ListarController!{% endblock %}
+
+{% block body %}
+    <div class="contenedor_descripcion">
+        {% for producto in productos %}
+            <div class="p_imagen">
+                <img src="{{ asset('image/CategoriasProductos/') ~ producto.getPathimagen }}" widht="337.25px" height="337.25px">
+                <div class="precio_oferta">
+                    {% for oferta in ofertas %}
+                        <h1>{{ oferta.descuento}}%</h1>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="descripcion">
+                <!-- <span>{{ producto.id }}</span> -->
+                <div class="caracteristicas">
+                    <h1  class="ml-2">{{ producto.nombre }}</h1>
+                    {% if ofertas|length==0 %}
+                        <span class="ml-2">Precio: {{ producto.precio }}€</span>
+                        {% else %}
+                            <span class="ml-2 precio_antiguo">Antes: {{ producto.precio }}€</span>
+                            {% for oferta in ofertas %}
+                                <span class="ml-2 precio_nuevo">Ahora: {{ producto.precio - (producto.precio*(oferta.descuento)/100)}}€</span>
+                            {% endfor %}
+                    {% endif %}
+
+                    <span class="ml-2">Dimensiones: {{ producto.dimensiones }}m²</span>
+                    <span class="ml-2">Stock: {{ producto.stock }}</span>
+                    <span class="ml-2">Descripcion: {{ producto.descripcion }}</span>
+                    <span class="ml-2">Categoria: {{ producto.categorias }}</span>
+                </div>
+
+                <div class="comprar mt-4 ml-2">
+                     <button class="btn btn-outline-success" id="addcarrito-{{producto.id}}">Comprar</button> 
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Categorias index{% endblock %}
+
+{% block body %}
+    <div class="contenedor_formulario">
+        <div class="tabla m-4">
+            <h1 class="text-center d-block p-2">Categorias</h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Ruta</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for categoria in categorias %}
+                    <tr>
+                        <td>{{ categoria.id }}</td>
+                        <td>{{ categoria.nombre }}</td>
+                        <td>{{ categoria.pathimagen }}</td>
+                        <td>
+                            <a href="{{ path('categorias_show', {'id': categoria.id}) }}">Ver |</a>
+                            <a href="{{ path('categorias_edit', {'id': categoria.id}) }}"> Editar</a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="4">No se encuentran categorias creados</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <div class="opciones m-4 w-100">
+                <div class="navigation d-flex justify-content-center">
+                    {{ knp_pagination_render(categorias) }}
+                </div>
+                <a href="{{ path('categorias_new') }}" ><i class="fas fa-plus-circle"></i> Nueva Categoria</a>
+            </div>
+            </div>
+        </div>
+        <!--<div class="count">
+            {{ categorias.getTotalItemCount }}
+        </div>-->
+    </div>
+{% endblock %}

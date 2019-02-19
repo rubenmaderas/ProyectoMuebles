@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ListarController!{% endblock %}
+
+{% block body %}
+    
+    <div class="contenedor_listado">
+        {% for producto in productos %}
+        
+            <div class="producto">
+                <a href="{{ path('descripcion', {'id': producto.id}) }}">
+                <div class="p_imagen">
+                    <img src="{{ asset('image/CategoriasProductos/') ~ producto.getPathimagen }}">
+                </div>
+
+                
+                <div class="descripcion">
+                    <!-- <span>{{ producto.id }}</span> -->
+                    <span >{{ producto.nombre }}</span>
+                    <span >{{ producto.precio }}€</span>
+                    <!-- <span class="ml-4">Dimensiones: {{ producto.dimensiones }}m²</span>
+                    <span class="ml-4">Stock: {{ producto.stock }}</span>
+                    <span class="ml-4">Descripcion: {{ producto.descripcion }}</span>
+                    <span class="ml-4">Categoria: {{ producto.categorias }}</span> -->
+                </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+    
+{% endblock %}

@@ -1,0 +1,15 @@
+{% block body %}
+
+    <div class="contenedor_index">
+        <div class="titulo_ofertas">
+            <h1>Ofertas</h1>
+        </div>
+        <div class="contenedor_slider">
+        {% for producto in productos %}
+           <a href="{{ path('descripcion', {'id': producto.id}) }}">
+                <img class="mySlides" src="{{ asset('image/CategoriasProductos/') ~ producto.getPathimagen }}">
+            </a> 
+        {% endfor %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Productos index{% endblock %}
+
+{% block body %}
+    <div class="contenedor_formulario">
+        <div class="tabla m-4">
+            <h1 class="text-center d-block p-2">Productos</h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Dimensiones</th>
+                        <th>Pathimagen</th>
+                        <th>Stock</th>
+                        <th>Materiales</th>
+                        <th>Descripcion</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for producto in productos %}
+                    <tr>
+                        <td>{{ producto.id }}</td>
+                        <td>{{ producto.nombre }}</td>
+                        <td>{{ producto.precio }}</td>
+                        <td>{{ producto.dimensiones }}</td>
+                        <td><img src="{{ asset('image/CategoriasProductos/') ~ producto.getPathimagen }}" width="50px"> </td>
+                        <td>{{ producto.stock }}</td>
+                        
+                            <td><select>
+                                {% for producto in producto.materiales %}
+                                    <option>{{ producto.nombre }}</option>
+                                {% endfor%}
+                            </select></td>
+                        
+                        <td>{{ producto.descripcion }}</td>
+                        <td>
+                            <a href="{{ path('productos_show', {'id': producto.id}) }}">Ver |</a>
+                            <a href="{{ path('productos_edit', {'id': producto.id}) }}"> Editar</a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="9">No se encuentran materiales creados</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <div class="opciones m-4 w-100">
+                <div class="navigation d-flex justify-content-center">
+                    {{ knp_pagination_render(productos) }}
+                </div>
+                <a href="{{ path('productos_new') }}" ><i class="fas fa-plus-circle"></i> Nuevo Producto</a>
+            </div>
+        </div>
+    </div>
+        <!--<div class="count">
+            {{ productos.getTotalItemCount }}
+        </div>-->
+    </div>    
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ListarController!{% endblock %}
+
+{% block body %}
+   
+    <div class="contenedor_formulario">
+        <div class="tabla m-4">
+            <h1 class="text-center d-block p-2">Tu compra perfecta Lidel</h1>
+
+            {% if productos|length>0 %}
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th>Dimensiones</th>
+                            <th>Pathimagen</th>
+                            <th>Descripcion</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for key,producto in productos %}
+                            <tr>
+                                <td>{{ producto.nombre }}</td>
+                                <td>{{ producto.precio }}</td>
+                                <td>{{ producto.dimensiones }}</td>
+                                <td><img src="{{ asset('image/CategoriasProductos/') ~ producto.getPathimagen }}" width="50px"> </td>
+                                <td>{{ producto.descripcion }}</td>
+                                <td>
+                                    <a href="{{ path('borrar_producto_carrito', {'id': key}) }}">Borrar</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+        
+            {% else %}
+                <div class="mensaje">
+                    <p colspan="9" class="mensaje_vacio">Su carrito esta vacio</p>
+                </div>
+            {% endif %}      
+        </div> 
+    </div>
+    
+{% endblock %}
